@@ -4,5 +4,5 @@ Current tech stack for initial MVP:
     - Cache solution: Redis
     - Run instruction: `cd frontend` and `npm run dev`
 - Back-end:
-    - Python - FastAPI
+    - Python - FastAPI, RabbitMQ 
     - Run instruction: 
