@@ -2,3 +2,5 @@
 ./frontend/.next
 
 ./backend/.venv
+
+./database/node_modules
