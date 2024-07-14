@@ -7,6 +7,9 @@ const app = express(); // Initialize the Express application
 const port = 3000; // Set the server port to 3000
 const dbPath = "./instance/repos.sqlite";
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+
 // Define the database connection, might be migrated to a separate module
 // Open a connection to the database and return a Promise
 const dbPromise = sqlite.open({
@@ -21,6 +24,29 @@ async function setupDB(args) {
         // migrationsPath: "./migrations",
     }); // Run the migration function to create the database tables
 }
+
+async function insertRepository(name, url) {
+    const db = await dbPromise;
+    const result = await db.run(
+        `INSERT INTO repositories (name, url) VALUES (?, ?)`,
+        [name, url]
+    );
+    console.log(`A row has been inserted with rowid ${result.lastID}`);
+}
+
+// Handle POST request for adding a new task
+app.post("/add-repo", async (req, res) => {
+    const name = req.body.name; 
+    const url = req.body.url; 
+    try {
+        await insertRepository(name, url); // Insert the repository into the database
+    }
+    catch (error) {
+        console.error(error); // Log any errors to the console
+        return res.status(500).send('An error occurred while adding the repository');
+    }
+    res.status(201).send('Repository added successfully');
+});
 
 // Set up function
 async function setup() {
