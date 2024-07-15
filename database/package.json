@@ -11,8 +11,16 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "module-alias": "^2.2.3",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@config": "config.js",
+    "@models": "models",
+    "@routes": "routes",
+    "@database": "helpers/db.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
