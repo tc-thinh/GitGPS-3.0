@@ -3,5 +3,5 @@ export default function SearchPage() {
     <div>
       <h1>Search Page</h1>
     </div>
-  );
+  )
 }

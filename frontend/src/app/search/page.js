@@ -1,5 +1,5 @@
-import SearchPage from "@/components/SearchPage";
+import SearchPage from '@/components/SearchPage'
 
 export default function Search() {
-    return <SearchPage />;
+  return <SearchPage />
 }
