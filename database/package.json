@@ -11,7 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "graphql": "^16.9.0",
+    "graphql-http": "^1.22.1",
     "module-alias": "^2.2.3",
+    "ruru": "^2.0.0-beta.13",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
   },
