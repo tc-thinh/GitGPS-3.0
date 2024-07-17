@@ -5,10 +5,11 @@ const router = express.Router();
 const { insertRepository } = require('@models/repository');
 
 router.post("/add-repo", async (req, res) => {
-    const name = req.body.name; 
+    const name = req.body.name;
+    const description = req.body.description;
     const url = req.body.url; 
     try {
-        await insertRepository(name, url);
+        await insertRepository(name, description, url);
     }
     catch (error) {
         console.error(error);
