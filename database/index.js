@@ -2,13 +2,15 @@ require('module-alias/register'); // Import module-alias
 
 const express = require('express');
 const { setupDB } = require('@database');
-const repoRouter = require('@routes/repo');
+const repoRouter = require('@routes/repository');
+const directoryRouter = require('@routes/directory');
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 app.use(repoRouter);
+app.use(directoryRouter);
 
 async function setup() {
     try {
