@@ -28,7 +28,6 @@ CREATE TABLE repo_files (
     filepath VARCHAR(1023) NOT NULL,
     description TEXT NULL,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    parent_directory_id INTEGER NOT NULL,
     FOREIGN KEY (repo_id) REFERENCES repositories(repo_id),
     FOREIGN KEY (parent_directory_id) REFERENCES repo_directories(directory_id)
 );

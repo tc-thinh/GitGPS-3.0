@@ -56,4 +56,4 @@ async function getAllDirectoriesFromParentDirectoryId(parent_directory_id) {
     }
 }
 
-module.exports = { insertDirectoryFromRepo, insertDirectoryFromDirectory, getDirectory, getAllDirectoriesFromRepoId, getAllDirectoriesFromParentDirectoryId };
+module.exports = { insertDirectoryFromRepo, insertDirectoryFromDirectory, getAllDirectoriesFromRepoId, getAllDirectoriesFromParentDirectoryId };
